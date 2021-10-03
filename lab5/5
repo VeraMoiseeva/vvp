@@ -1,0 +1,97 @@
+#include <iostream>
+#include <cmath>
+int main()
+{
+    setlocale(0, "");
+	int n;
+    std::cout << "Введите номер задания" << "\n";
+	std::cin >> n;
+	if (n == 1) {
+        int a, b, c, d;
+        std::cout << "Введите координаты точки а" << "\n";
+        std::cin >> a;
+        std::cin >> b;
+        std::cout << "Введите координаты точки b" << "\n";
+        std::cin >> c;
+        std::cin >> d;
+        std::cout << "Расстояние между двумя точками с заданными координатами:";
+        std::cout << sqrt(pow((c - a), 2) + pow((d - b), 2)) << "\n";
+	}
+    else if (n==2){
+        int a, b, c;
+        std::cout << "Введите координату точки A" << "\n";
+        std::cin >> a;
+        std::cout << "Введите координату точки B" << "\n";
+        std::cin >> b;
+        std::cout << "Введите координату точки C" << "\n";
+        std::cin >> c;
+        std::cout << "Длина отрезка AC:";
+        std::cout << abs(c - a) << "\n";
+        std::cout << "Длина отрезка BC:";
+        std::cout << abs(c - b) << "\n";
+        std::cout << "Сумма отрезков AC и BC:";
+        std::cout << abs(c - a) + abs(c - b) << "\n";
+    }
+    else if (n==3){
+        int a, b, c, ac, bc;
+        std::cout << "Введите координату точки A" << "\n";
+        std::cin >> a;
+        std::cout << "Введите координату точки B" << "\n";
+        std::cin >> b;
+        std::cout << "Введите координату точки C" << "\n";
+        std::cin >> c;
+        if ((c > a) and (b > c)) {
+            ac = c - a;
+            bc = b - c;
+            std::cout << "Произведение длин отрезков AC и BC:";
+            std::cout << ac * bc << "\n";
+        }
+        else if ((c < a) and (b < c)) {
+            ac = a - c;
+            bc = c - b;
+            std::cout << "Произведение длин отрезков AC и BC:";
+            std::cout << ac * bc << "\n";
+        }
+        else {
+            std::cout << "Точка С находится не между точек A и B" << "\n";
+        }
+    }
+    else if (n == 4) {
+        int x1, x2, y1, y2;
+        std::cout << "Введите координаты точки A прямоугольника" << "\n";
+        std::cin >> x1;
+        std::cin >> y1;
+        std::cout << "Введите координаты точки C прямоугольника, противоположной точке A" << "\n";
+        std::cin >> x2;
+        std::cin >> y2;
+        std::cout << "Периметр прямоугольника:";
+        std::cout << 2 * (abs(x2 - x1) + abs(y2 - y1)) << "\n";
+        std::cout << "Площадь прямоугольника:";
+        std::cout << abs(x2 - x1) * abs(y2 - y1) << "\n";
+    }
+    else if (n == 5) {
+        int x1, x2, x3, y1, y2, y3;
+        double ab, bc, ac, p, p2;
+        std::cout << "Введите координаты точки A треугольника ABC " << "\n";
+        std::cin >> x1;
+        std::cin >> y1;
+        std::cout << "Введите координаты точки B треугольника ABC" << "\n";
+        std::cin >> x2;
+        std::cin >> y2;
+        std::cout << "Введите координаты точки C треугольника ABC" << "\n";
+        std::cin >> x3;
+        std::cin >> y3;
+        ab = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+        bc = sqrt(pow((x3 - x2), 2) + pow((y3 - y2), 2));
+        ac = sqrt(pow((x3 - x1), 2) + pow((y3 - y1), 2));
+        p = ab + bc + ac;
+        std::cout << "Периметр треугольника ABC:";
+        std::cout << p << "\n";
+        p2 = p / 2;
+        std::cout << "Площадь треугольника ABC:";
+        std::cout << sqrt(p2 * (p2 - ab) * (p2 - bc) * (p2 - ac)) << "\n";
+    }
+    else {
+        std::cout << "Такого задания нет " << "\n";
+    }
+}
