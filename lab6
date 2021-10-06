@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a,d,b,n,x,y,c,a1,b1,c1 ;
+    setlocale(0, "");
+    cout << "Введите номер задания" << "\n";
+    cin >> n;
+    if (n == 1) {
+        cout << "Введите значения A и B\n";
+        cin >> a;
+        cin >> b;
+        c = a;
+        a = b;
+        b = c;
+        cout << "Новое значение A:";
+        cout << a << "\n";
+        cout << "Новое значение B:";
+        cout << b;
+    }
+    else if (n == 2) {
+        cout << "Введите значения A \n";
+        cin >> a;
+        cout << "Введите значения B \n";
+        cin >> b;
+        cout << "Введите значения C \n";
+        cin >> c;
+        a1 = a;
+        b1 = b;
+        c1 = c;
+        b = a1;
+        c = b1;
+        a = c1;
+
+        cout << "Новое значение A:";
+        cout << a << "\n";
+        cout << "Новое значение B:";
+        cout << b << "\n";
+        cout << "Новое значение C:";
+        cout << c;
+    }
+    else if (n == 3) {
+        cout << "Введите значения A \n";
+        cin >> a;
+        cout << "Введите значения B \n";
+        cin >> b;
+        cout << "Введите значения C \n";
+        cin >> c;
+        a1 = a;
+        b1 = b;
+        c1 = c;
+        b = c1;
+        c = a1;
+        a = b1;
+
+        cout << "Новое значение A:";
+        cout << a << "\n";
+        cout << "Новое значение B:";
+        cout << b << "\n";
+        cout << "Новое значение C:";
+        cout << c;
+    }
+    else if (n == 4) {
+        setlocale(0, "");
+        cout << "Введите значения x \n";
+        cin >> x;
+        y = 3 * pow(x, 6) - 6 * pow(x, 2) - 7;
+        cout << "y=";
+        cout << y;
+    }
+    else if (n == 5) {
+        cout << "Введите значения x \n";
+        cin >> x;
+        y = 4 * pow((x - 3), 6) - 7 * pow((x - 3), 3) + 2;
+        cout << "y=";
+        cout << y;
+    }
+    else if (n == 6) {
+        cout << "Введите значения a \n";
+        cin >> a;
+        d = a * a;
+        cout << "A^8=";
+        cout << d * d * d * d;
+    }
+    else if (n == 7) {
+        cout << "Введите значения a \n";
+        cin >> a;
+        d = a * a;
+        b = a * a * a * a * a;
+        cout << "A^15=";
+        cout << d * d * d * d * d * b;
+    }
+    else if (n > 7) {
+        cout << "Такого значения нет \n";
+    }
+   
+}
