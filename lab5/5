@@ -85,11 +85,16 @@ int main()
         bc = sqrt(pow((x3 - x2), 2) + pow((y3 - y2), 2));
         ac = sqrt(pow((x3 - x1), 2) + pow((y3 - y1), 2));
         p = ab + bc + ac;
-        std::cout << "Периметр треугольника ABC:";
-        std::cout << p << "\n";
         p2 = p / 2;
-        std::cout << "Площадь треугольника ABC:";
+        if ((sqrt(p2 * (p2 - ab) * (p2 - bc) * (p2 - ac)) == 0)) {
+            std::cout << "Такого треугольника нет " << "\n";
+        }
+        else if ((sqrt(p2* (p2 - ab)* (p2 - bc)* (p2 - ac)) != 0)){
+         std::cout << "Периметр треугольника ABC:";
+         std::cout << p << "\n";
+         std::cout << "Площадь треугольника ABC:";
         std::cout << sqrt(p2 * (p2 - ab) * (p2 - bc) * (p2 - ac)) << "\n";
+        }
     }
     else {
         std::cout << "Такого задания нет " << "\n";
