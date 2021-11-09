@@ -1,0 +1,64 @@
+#include <iostream> 
+#include <cmath>
+using namespace std;
+int main()
+{
+    setlocale(0, "");
+    int n,x,i,z;
+	double d,m,a,s;
+    cout << "Введите номер задания" << "\n";
+    cin >> z;
+    if (z == 1) {
+		cout << "Введите вещественное число — цена 1 кг конфет:\n";
+		cin >> m;
+		for (d = 0.1; d < 1; d += 0.1)
+		{
+			cout << d << " кг стоит: " << m * d << "\n";
+		}
+    }
+	else if (z == 2) {
+		m = 1.1;
+		cout << "Введите целое число N (> 0)\n";
+		cin >> n;
+		for (d = 1.2, x = 1; x < n; d += 0.1, x++) {
+			m = m * d;
+		}
+		cout << "Произведение " << n << " сомножителей равно " << m;
+	}
+	else if (z == 3) {
+		x = 0;
+		cout << "Введите целое число N (> 0)\n";
+		cin >> n;
+		for (i = 1; i <= n * 2 - 1; i += 2) {
+			x += i;
+			cout << x << "\n";
+		}
+		cout << "Квадрат числа " << n << " равен " << x;
+	}
+	else if (z == 4) {
+		s = 0;
+		cout << "Введите вещественное число A \n";
+		cin >> a;
+		cout << "Введите целое число N (> 0)\n";
+		cin >> n;
+		for (i = 0; i <= n; i++) {
+			s += pow(a, i);
+		}
+		cout << "Сумма равна " << s;
+	}
+	else if (z == 5) {
+		s = 0;
+			cout << "Введите вещественное число A: \n";
+			cin >> a;
+			cout << "Введите целое число N (> 0): \n";
+			cin >> n;
+			for (i = 0; i <= n; i++) {
+				s += pow(-a, i);
+			}
+			cout << s;
+	}
+	else if (z > 5) {
+		cout << "Такого задания нет \n";
+	}
+}
+
