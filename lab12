@@ -5,6 +5,7 @@ int main()
 {
     setlocale(0, "");
     int d, m,nap,k,n;
+	char napr;
 	cout << "Введите номер задания\n";
 	cin >> n;
 	if (n == 1) {
@@ -138,10 +139,25 @@ int main()
 
 	}
 	else if (n == 2) {
-	cout << "Введите исходное направление робота: 1 — север, 2 — запад, 3 — юг, 4 — восток:\n ";
-	cin >> nap;
+	cout << "Введите исходное направление робота: N — север, W — запад, N — юг, E — восток:\n ";
+	cin >> napr;
 	cout << "Введите команду для робота: 0 — продолжать движение, 1 — поворот налево, -1 — поворот направо:\n ";
 	cin >> k;
+	switch (napr) {
+	case('N'):
+		nap = 1;
+		break;
+	case('W'):
+		nap = 2;
+		break;
+	case('S'):
+		nap = 3;
+		break;
+	case('E'):
+		nap = 4;
+		break;
+
+	}
 	m = nap + k;
 	cout << "Направление робота после выполнения полученной команды: ";
 	switch (m) {
@@ -164,7 +180,6 @@ int main()
 		cout << "север";
 		break;
 	}
-
 	}
 	else if (n == 3) {
 
@@ -199,6 +214,22 @@ int main()
 		case(34):
 			cout << "Тридцать четыре учебных задания";
 			break;
+		case(15):
+			cout << "Пятнадцать учебных заданий";
+			break;
+		case(16):
+			cout << "Шестнадцать учебных заданий";
+			break;
+		case(17):
+			cout << "Семнадцать учебных заданий";
+			break;
+		case(18):
+			cout << "Восемнадцать учебных заданий";
+			break;
+		case(19):
+			cout << "Девятнадцать учебных заданий";
+			break;
+
 		default:
 			switch (d) {
 			case(10):
@@ -215,27 +246,6 @@ int main()
 				break;
 			case(14):
 				cout << "Четырнадцать ";
-				break;
-			case(15):
-				cout << "Пятнадцать ";
-				break;
-			case(16):
-				cout << "Шестнадцать ";
-				break;
-			case(17):
-				cout << "Семнадцать ";
-				break;
-			case(18):
-				cout << "Восемнадцать ";
-				break;
-			case(19):
-				cout << "Девятнадцать ";
-				break;
-			case(20):
-				cout << "Двадцать ";
-				break;
-			case(30):
-				cout << "Тридцать ";
 				break;
 			case(40):
 				cout << "Сорок ";
