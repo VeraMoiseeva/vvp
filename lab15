@@ -1,0 +1,93 @@
+#include <iostream> 
+#include <cmath>
+using namespace std;
+void PowerA3(double A, double& B)
+{
+	B = A * A * A;
+}
+int Sig(int x)
+{
+	if (x < 0) return -1;
+	else if (x == 0) return 0;
+	else return 1;
+}
+double RingS(double R1, double R2)
+{
+	double S = 3.14 * (R1 * R1 - R2 * R2);
+	if (R1 > R2) {
+		return S;
+	}
+	else {
+		return 0;
+	}
+}
+int Quarter(int x, int y)
+{
+	int result = 0;
+	if (x > 0) {
+		if (y > 0)
+			result = 1;
+		else if (y < 0)
+			result = 4;
+	}
+	else {
+		if (y > 0)
+			result = 2;
+		else if (y < 0)
+			result = 3;
+	}
+	return result;
+}
+double Fact2(double N)
+{
+	if (N == 1 || N == 0)
+		return 1;
+	return N * Fact2(N - 2);
+}
+int main()
+{
+	setlocale(0, "");
+	int z,N,a, b,x, y;
+	double R1, R2, A,B;
+	int i;
+	double mas[5] = { 1, 2, 3, 4, 5 };
+	cout << "Введите номер задания" << "\n";
+	cin >> z;
+	if (z == 1) {
+		for (int i = 1; i <= 5; i++) {
+			cout << "Введите число A:\n";
+			cin >> A;
+			PowerA3(A, B);
+			cout << "Третья степень числа " << A << " = " << B << "\n";
+		}
+		}
+	else if (z == 2) {
+		cout << "Введите вещественные числа a и b:\n";
+		cin >> a >> b;
+		cout << "Значение выражения Sign(a) + Sign(b)= ";
+		cout << Sig(a) + Sig(b);
+		return 0;
+	}
+	else if (z == 3) {
+		for (int i = 1; i <= 3; i++) {
+			cout << "Введите радиусы окружностей R1 и R2 (R1>R2):\n";
+			cin >> R1 >> R2;
+			cout << "S" << i << "=" << RingS(R1, R2) << "\n";
+		}
+	}
+	else if (z == 4) {
+		for (int i = 1; i <= 3; i++) {
+			cout << "Введите ненулевые координаты точки (x, y):\n";
+			cin >> x >> y;
+			cout << "Номер координатной четверти точки " << "= " << Quarter(x, y) << "\n";
+		}
+	}
+	else if (z == 5) {
+		cout << "Введите число N:\n";
+		cin >> N;
+		cout << "Двойной факториал этого числа " << "= " << Fact2(N) << "\n";
+	}
+	else if (z > 5) {
+		cout << "Такого задания нет \n";
+	}
+}
