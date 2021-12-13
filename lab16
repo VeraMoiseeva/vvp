@@ -1,6 +1,22 @@
 #include <iostream> 
 #include <cmath>
 using namespace std;
+void number5(int m[], int n)
+{
+	for (int j = 1; j < n; j += 2){
+		cout << m[j] << " ";
+	}
+	if (n % 2 == 0){
+		for (int i = n - 2; i >= 0; i -= 2){
+			cout << m[i] << " ";
+		}
+	}
+	else{
+		for (int i = n - 1; i >= 0; i -= 2){
+			cout << m[i] << " ";
+		}
+	}
+}
 int main()
 {
 	setlocale(0, "");
@@ -91,10 +107,10 @@ int main()
 		}
 		cout << "\n";
 		cout << "Новый массив:\n";
-		for (int i = 0; i < n; i += 2) cout << m[i] << " ";
-		for (int i = (n % 2) ? n - 2 : n - 1; i >= 1; i -= 2) cout << m[i] << " ";
+		number5(m, n);
 	}
 	else if (z > 5) {
 		cout << "Такого задания нет \n";
 	}
+	
 }
